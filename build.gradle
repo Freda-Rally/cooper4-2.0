@@ -1,0 +1,51 @@
+buildscript {
+    ext {
+        springBootVersion = '1.4.0.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {url  "http://jcenter.bintray.com"}
+        maven { url 'https://plugins.gradle.org/m2/'}
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath 'io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE'
+    }
+}
+
+allprojects{
+
+    group = 'org.freda'
+    version = '2.0'
+
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+subprojects{
+
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {url  "http://jcenter.bintray.com"}
+        maven { url 'https://plugins.gradle.org/m2/'}
+        flatDir { dirs 'libs'}
+    }
+
+    dependencies {
+        //JAVA
+        compile fileTree(dir:'libs',include:'*.jar')
+
+        //TEST
+        testCompile 'junit:junit:4.12'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.8'
+}

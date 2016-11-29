@@ -1,0 +1,23 @@
+spring:
+  profiles.active: development
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri:
+
+  pidfile: shared/tmp/pids/application.pid
+logging:
+  level:
+    org.springframework: 'OFF'
+server:
+  port: 8001
+---
+
+spring:
+  profiles: test
+---
+spring:
+  profiles: production

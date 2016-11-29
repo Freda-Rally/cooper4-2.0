@@ -1,0 +1,34 @@
+jar {
+    baseName = 'cooper4-framework'
+    version = '2.0'
+}
+
+repositories {
+    flatDir { dirs 'libs' }
+}
+dependencies {
+    //JAVA
+    //COMMON
+    compile 'commons-codec:commons-codec:1.10'
+    compile 'commons-beanutils:commons-beanutils:1.9.2'
+    compile 'commons-fileupload:commons-fileupload:1.3.1'
+    compile 'org.apache.commons:commons-compress:1.11'
+
+
+    compile 'org.springframework:spring-context:4.3.4.RELEASE'
+    compile 'org.springframework:spring-web:4.3.4.RELEASE'
+    compile 'org.springframework:spring-webmvc:4.3.3.RELEASE'
+
+
+
+    //JSON
+    compile 'com.alibaba:fastjson:1.2.8'
+
+    //Joda
+    compile 'joda-time:joda-time:2.9.3'
+
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+
+    compile "com.mashape.unirest:unirest-java:1.4.9"
+
+}
