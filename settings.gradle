@@ -1,3 +1,3 @@
 rootProject.name = 'cooper4'
-include 'config-server','eureka-server','framework','auth','core'
+include 'config-server','eureka-server','framework','auth','core','zookeeper-server'
 

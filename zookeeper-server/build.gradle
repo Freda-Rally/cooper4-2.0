@@ -1,0 +1,4 @@
+jar {
+    baseName = 'cooper4-zookeeper-server'
+    version = '2.0'
+}
