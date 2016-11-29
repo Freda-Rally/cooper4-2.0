@@ -1,7 +1,7 @@
 .settings/
 /.gradle/
 /.idea/
-/build/
+**/build/
 /classes/
 *.iml
 *.ipr

@@ -6,12 +6,10 @@ spring:
     config:
       server:
         git:
-          uri:
+          uri: https://github.com/Freda-Rally/cooper4-2.0.git
+          searchPaths: yamls
 
-  pidfile: shared/tmp/pids/application.pid
-logging:
-  level:
-    org.springframework: 'OFF'
+  pidfile: shared/tmp/pids/config-server.pid
 server:
   port: 8001
 ---

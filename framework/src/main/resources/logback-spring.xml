@@ -28,11 +28,11 @@
 
 
     <root level="INFO">
-        <springProfile name="DEVELOP">
+        <springProfile name="development">
             <appender-ref ref="stdout"/>
         </springProfile>
 
-        <springProfile name="PRODUCTION, TEST, DEMO">
+        <springProfile name="test, production">
             <appender-ref ref="logfile"/>
         </springProfile>
     </root>
