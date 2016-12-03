@@ -1,1 +1,19 @@
-test: 'test'
+spring:
+  profiles.active: development
+eureka:
+  instance:
+    hostname: localhost
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+---
+
+spring:
+  profiles: test
+---
+spring:
+  profiles: production
