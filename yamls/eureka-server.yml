@@ -1,1 +1,48 @@
-app: eureka-server
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+---
+spring:
+  profiles: primary
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: eureka-primary
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-secondary:8761/eureka/,http://eureka-tertiary:8761/eureka/
+
+---
+spring:
+  profiles: secondary
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: eureka-secondary
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-tertiary:8761/eureka/,http://eureka-primary:8761/eureka/
+
+---
+spring:
+  profiles: tertiary
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: eureka-tertiary
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-primary:8761/eureka/,http://eureka-secondary:8761/eureka/
