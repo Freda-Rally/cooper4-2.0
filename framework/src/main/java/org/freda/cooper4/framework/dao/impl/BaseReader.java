@@ -29,7 +29,6 @@ public class BaseReader extends SqlSessionDaoSupport implements FredaReader
      * @param parameterObject
      *            查询条件对象(map javaBean)
      */
-    @Override
     public Object queryForObject(String statementName, Object parameterObject)
     {
         return super.getSqlSession().selectOne(statementName, parameterObject);
@@ -40,7 +39,6 @@ public class BaseReader extends SqlSessionDaoSupport implements FredaReader
      *
      * @param statementName SQL语句ID号
      */
-    @Override
     public Object queryForObject(String statementName)
     {
         return super.getSqlSession().selectOne(statementName);
@@ -54,7 +52,6 @@ public class BaseReader extends SqlSessionDaoSupport implements FredaReader
      *            查询条件对象(map javaBean)
      */
     @SuppressWarnings("rawtypes")
-    @Override
     public List queryForList(String statementName, Object parameterObject)
     {
         return super.getSqlSession().selectList(statementName, parameterObject);
@@ -69,7 +66,6 @@ public class BaseReader extends SqlSessionDaoSupport implements FredaReader
      * @throws SQLException
      */
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    @Override
     public Page queryForPage(String statementName, Dto qDto) throws SQLException
     {
         String start = qDto.getAsString("start");
@@ -108,7 +104,6 @@ public class BaseReader extends SqlSessionDaoSupport implements FredaReader
      * @param statementName SQL语句ID号
      */
     @SuppressWarnings("rawtypes")
-    @Override
     public List queryForList(String statementName)
     {
         return super.getSqlSession().selectList(statementName);
@@ -121,7 +116,6 @@ public class BaseReader extends SqlSessionDaoSupport implements FredaReader
      * @return 返回Connection对象
      * @throws SQLException
      */
-    @Override
     public Connection getConnection() throws SQLException
     {
         return super.getSqlSession().getConnection();
