@@ -1,8 +1,0 @@
-jar {
-    baseName = 'cooper4-auth'
-    version = '2.0'
-}
-
-dependencies {
-    compile project(':framework')
-}

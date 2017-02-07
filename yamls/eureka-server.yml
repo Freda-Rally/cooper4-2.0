@@ -8,6 +8,7 @@ eureka:
 ---
 spring:
   profiles: primary
+  pidfile: shared/tmp/pids/eureka-primary-server.pid
 server:
   port: 8761
 eureka:
@@ -22,6 +23,7 @@ eureka:
 ---
 spring:
   profiles: secondary
+  pidfile: shared/tmp/pids/eureka-secondary-server.pid
 server:
   port: 8761
 eureka:
@@ -36,6 +38,7 @@ eureka:
 ---
 spring:
   profiles: tertiary
+  pidfile: shared/tmp/pids/eureka-tertiary-server.pid
 server:
   port: 8761
 eureka:
