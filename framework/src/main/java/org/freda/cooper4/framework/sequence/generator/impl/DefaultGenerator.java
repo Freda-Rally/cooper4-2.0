@@ -60,22 +60,11 @@ public class DefaultGenerator implements Generator
     @Override
     public String create(String id) throws SeqBaseException
     {
-        if (lock.tryLock())
+        synchronized (id.intern())
         {
-            try
-            {
-                Model model = sequence.next(id);
+            Model model = sequence.next(id);
 
-                return prefix.create(model) + format.format(model);
-            }
-            finally
-            {
-                lock.unlock();
-            }
-        }
-        else
-        {
-            return null;
+            return prefix.create(model) + format.format(model);
         }
     }
 }

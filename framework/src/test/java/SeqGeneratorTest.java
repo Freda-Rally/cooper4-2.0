@@ -18,10 +18,12 @@ public class SeqGeneratorTest
 
         for (int i=0;i<100000;i++)
         {
+            final int d = i%2;
+
             pool.execute(new Runnable() {
                 @Override
                 public void run() {
-                    System.out.println(generator.create("RUN"));
+                    System.out.println(generator.create("RUN" + d));
                 }
             });
         }
