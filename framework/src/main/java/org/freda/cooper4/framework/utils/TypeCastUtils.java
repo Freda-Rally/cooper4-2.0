@@ -339,7 +339,7 @@ public class TypeCastUtils
             if ("String".equals(type) || "java.lang.String".equals(type))
                 if (format == null || format.length() == 0)
                 {
-                    return (new SimpleDateFormat(DefaultContainer.DATE_TIME_FORMART[0])).format(tme).toString();
+                    return (new SimpleDateFormat(DefaultContainer.DATE_TIME_FORMAT[0])).format(tme).toString();
                 }
                 else
                 {

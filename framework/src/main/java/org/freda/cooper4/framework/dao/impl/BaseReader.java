@@ -14,11 +14,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- *
+ *  查询数据库.
  *
  * Created by rally on 2016/12/4.
  */
-public class BaseReader extends SqlSessionDaoSupport implements FredaReader
+public abstract class BaseReader extends SqlSessionDaoSupport implements FredaReader
 {
     private static final Log log = LogFactory.getLog(BaseReader.class);
 

@@ -1,7 +1,7 @@
 package org.freda.cooper4.framework.utils;
 
 import org.freda.cooper4.framework.datastructure.Dto;
-import org.freda.cooper4.framework.datastructure.impl.BaseDto;
+import org.freda.cooper4.framework.datastructure.impl.RequestDto;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRequest;
@@ -84,7 +84,7 @@ public class WebUtils
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public static Dto getParamsAsDto(HttpServletRequest request)
     {
-        Dto dto = new BaseDto();
+        Dto dto = new RequestDto();
         Map map = request.getParameterMap();
         Iterator keyIterator = map.keySet().iterator();
         while (keyIterator.hasNext())

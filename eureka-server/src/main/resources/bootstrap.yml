@@ -4,8 +4,8 @@ server:
 spring:
   application:
     name: eureka-server
-  profiles:
-    active: master
-  cloud:
-    config:
-      uri:  http://localhost:8001
+#  profiles:
+#    active: master
+#  cloud:
+#    config:
+#      uri:  http://localhost:8001

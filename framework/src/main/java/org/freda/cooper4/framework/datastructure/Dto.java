@@ -1,5 +1,7 @@
 package org.freda.cooper4.framework.datastructure;
 
+import org.freda.cooper4.framework.containers.enums.DtoConstantEnum;
+
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Date;
@@ -171,4 +173,12 @@ public interface Dto extends Map
      * @return
      */
     String toParamsString();
+
+    /**
+     * 获取常量
+     *
+     * @param constantEnum
+     * @return
+     */
+    <T> T getConstant(DtoConstantEnum constantEnum);
 }

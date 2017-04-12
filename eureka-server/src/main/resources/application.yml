@@ -2,6 +2,7 @@ spring:
   profiles.active: development
   pidfile: shared/tmp/pids/eureka-server.pid
 eureka:
+  environment: production
   instance:
     hostname: localhost
     preferIpAddress: true

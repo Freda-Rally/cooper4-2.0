@@ -1,6 +1,7 @@
 package org.freda.cooper4.framework.datastructure.impl;
 
 import org.freda.cooper4.framework.datastructure.Dto;
+import org.freda.cooper4.framework.containers.enums.DtoConstantEnum;
 import org.freda.cooper4.framework.json.JsonTools;
 import org.freda.cooper4.framework.utils.TypeCastUtils;
 
@@ -20,8 +21,6 @@ public class BaseDto extends HashMap implements Dto,Serializable
     public BaseDto()
     {
     }
-
-    @SuppressWarnings("unchecked")
     public BaseDto(String key, Object value)
     {
         put(key, value);
@@ -37,13 +36,6 @@ public class BaseDto extends HashMap implements Dto,Serializable
         setSuccess(success);
         setMsg(msg);
     }
-
-    public BaseDto(Boolean success , Object obj)
-    {
-        setSuccess(success);
-        setResultData(obj);
-    }
-
     /**
      * 以BigDecimal类型返回键值
      *
@@ -338,26 +330,29 @@ public class BaseDto extends HashMap implements Dto,Serializable
     }
 
     /**
-     * 设置返回结果
+     *  获取常量
      *
-     * @author wkgi-Rally
-     * @date 2015年10月8日 上午9:47:26
-     * @param obj
+     * @param constantEnum 常量枚举
+     * @return instance
      */
-    @SuppressWarnings("unchecked")
-    public void setResultData(Object obj)
+    @Override
+    public <T> T getConstant(DtoConstantEnum constantEnum)
     {
-        put("data", obj);
-    }
-    /**
-     * 获取返回结果
-     *
-     * @author wkgi-Rally
-     * @date 2015年10月8日 上午9:47:38
-     * @return obj
-     */
-    public Object getResultData()
-    {
-        return this.get("data");
+        Object obj = this.get(constantEnum.getKey());
+
+        if (obj != null)
+        {
+            Class<T> clazz = constantEnum.getValue();
+
+            try
+            {
+                return clazz.cast(obj);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        return null;
     }
 }

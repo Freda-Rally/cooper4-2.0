@@ -5,11 +5,11 @@ import org.freda.cooper4.framework.datastructure.Dto;
 import org.freda.cooper4.framework.exceptions.PrcException;
 
 /**
- *
+ * 怎删改查数据库.
  *
  * Created by rally on 2016/12/4.
  */
-public class BaseDao extends BaseReader implements FredaDao
+public abstract class BaseDao extends BaseReader implements FredaDao
 {
     /**
      * ADD
