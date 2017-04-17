@@ -3,6 +3,9 @@ spring:
   pidfile: shared/tmp/pids/eureka-server.pid
 eureka:
   environment: production
+  server:
+      enable-self-preservation: false
+      eviction-interval-timer-in-ms: 4000
   instance:
     hostname: localhost
     preferIpAddress: true

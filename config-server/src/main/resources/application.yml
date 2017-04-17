@@ -9,7 +9,12 @@ spring:
 
   pidfile: shared/tmp/pids/config-server.pid
 eureka:
+  instance:
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
   client:
+    healthcheck:
+      enabled: true
     registerWithEureka: true
     fetchRegistry: true
     service-url:
