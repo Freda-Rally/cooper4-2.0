@@ -32,6 +32,8 @@ public class RedisDistributedLock implements Lock
     public RedisDistributedLock(String lock , StringRedisTemplate redisTemplate)
     {
         this.lock_key = "_LOCK_" + lock.toUpperCase();
+
+        this.redisTemplate = redisTemplate;
     }
 
     @Override
