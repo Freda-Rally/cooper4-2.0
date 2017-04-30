@@ -1,0 +1,23 @@
+spring:
+  profiles.active: development
+
+#DRDID
+druid:
+  stat:
+    slowSqlMillis: 3000
+    logSlowSql: true
+    mergeSql: true
+  log:
+    resultSetLogEnabled: true
+    statementExecuteAfterLogEnabled: true
+    statementExecuteBatchAfterLogEnabled: true
+    statementExecuteQueryAfterLogEnabled: true
+    statementExecuteUpdateAfterLogEnabled: true
+    statementExecutableSqlLogEnable: true
+
+---
+spring:
+  profiles: test
+---
+spring:
+  profiles: production

@@ -3,6 +3,13 @@ jar {
     version = '2.0'
 }
 
+apply plugin: 'spring-boot'
+apply plugin: 'io.spring.dependency-management'
+
 dependencies {
     compile project(':framework')
+
+    compile 'com.alibaba:druid:1.0.29'
+
+    compile 'org.springframework.boot:spring-boot:1.4.0.RELEASE'
 }

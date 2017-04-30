@@ -2,7 +2,7 @@
 <configuration>
     <timestamp key="today" datePattern="yyyy-MM-dd"/>
     <property name="log_dir" value="logs"/>
-    <property name="project" value="framework"/>
+    <property name="project" value="core"/>
 
 
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
