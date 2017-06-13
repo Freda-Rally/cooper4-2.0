@@ -90,11 +90,11 @@ public class RedisDistributedLock implements Lock
         {
             final Random r = new Random();
 
-            while ((System.nanoTime() - nano) < unit.toMillis(time))
+            while ((System.nanoTime() - nano) < unit.toNanos(time))
             {
                 if (tryLock())
                 {
-                    break;
+                    return true;
                 }
                 Thread.sleep(3,r.nextInt(500));
             }
